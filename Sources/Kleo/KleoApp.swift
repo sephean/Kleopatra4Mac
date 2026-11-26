@@ -18,7 +18,7 @@ struct KleoApp: App {
     @State private var model = AppModel()
 
     var body: some Scene {
-        Window("Kleo", id: "main") {
+        Window("Kleo4Mac", id: "main") {
             ContentView()
                 .environment(model)
                 .frame(minWidth: 940, minHeight: 540)

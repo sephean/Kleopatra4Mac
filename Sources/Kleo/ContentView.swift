@@ -16,11 +16,16 @@ struct ContentView: View {
             } else if model.showNotepad {
                 NotepadView()
             } else {
-                Picker("", selection: $model.tab) {
-                    ForEach(KeyTab.allCases) { Text($0.rawValue).tag($0) }
+                HStack(spacing: 12) {
+                    Picker("", selection: $model.tab) {
+                        ForEach(KeyTab.allCases) { Text($0.rawValue).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    TextField("Search keys", text: $model.search)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 220)
                 }
-                .pickerStyle(.segmented)
-                .labelsHidden()
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
                 Divider()
@@ -29,7 +34,6 @@ struct ContentView: View {
             Divider()
             statusBar
         }
-        .searchable(text: $model.search, placement: .toolbar, prompt: "Search certificates")
         .sheet(item: $model.sheet) { sheet in
             sheetView(sheet).environment(model)
         }
@@ -288,7 +292,7 @@ struct GPGMissingView: View {
         ContentUnavailableView {
             Label("GnuPG Is Not Installed", systemImage: "exclamationmark.triangle")
         } description: {
-            Text("Kleo uses GnuPG to manage keys, like other OpenPGP certificate managers. Install it, then reopen Kleo:\n\nbrew install gnupg pinentry-mac\n\nor install GPG Suite from gpgtools.org.")
+            Text("Kleo4Mac uses GnuPG to manage keys, like other OpenPGP certificate managers. Install it, then reopen Kleo4Mac:\n\nbrew install gnupg pinentry-mac\n\nor install GPG Suite from gpgtools.org.")
                 .textSelection(.enabled)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

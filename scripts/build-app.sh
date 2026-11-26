@@ -1,9 +1,9 @@
 #!/bin/sh
-# Builds Kleo.app in ./build. Usage: ./scripts/build-app.sh
+# Builds Kleo4Mac.app in ./build. Usage: ./scripts/build-app.sh
 set -eu
 cd "$(dirname "$0")/.."
 
-APP=build/Kleo.app
+APP=build/Kleo4Mac.app
 VERSION=1.0.0
 
 swift build -c release
@@ -22,8 +22,8 @@ cat > "$APP/Contents/Info.plist" <<EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>CFBundleName</key><string>Kleo</string>
-  <key>CFBundleDisplayName</key><string>Kleo</string>
+  <key>CFBundleName</key><string>Kleo4Mac</string>
+  <key>CFBundleDisplayName</key><string>Kleo4Mac</string>
   <key>CFBundleIdentifier</key><string>io.github.s3raphine.kleo</string>
   <key>CFBundleExecutable</key><string>Kleo</string>
   <key>CFBundleIconFile</key><string>Kleo</string>
