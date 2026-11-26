@@ -1,6 +1,14 @@
-# Kleo
+<p align="center">
+  <img src="docs/icon.png" width="128" height="128" alt="Kleo icon">
+</p>
 
-A native macOS certificate manager for OpenPGP, built on GnuPG. Create and manage your keys, then sign, encrypt, decrypt and verify text and files from a simple Mac app.
+<h1 align="center">Kleo</h1>
+
+<p align="center">A native macOS certificate manager for OpenPGP, built on GnuPG.</p>
+
+Create and manage your keys, then sign, encrypt, decrypt and verify text and files from a simple Mac app.
+
+![Kleo's main window: the certificate list with statuses such as Certified, Not certified, Revoked and Ultimate](docs/screenshot.png)
 
 Kleo is a graphical front end to `gpg`, the same engine used by Kleopatra on Linux and Gpg4win on Windows. Your keys live in your normal GnuPG keyring (`~/.gnupg`), so everything you do in Kleo also works with `gpg` in the terminal and with any other OpenPGP software, and the other way around.
 
@@ -21,6 +29,8 @@ Kleo is a graphical front end to `gpg`, the same engine used by Kleopatra on Lin
 - Encrypt for yourself, for any number of recipients, and/or with a password
 - Clear-signed text and detached signatures (`.sig` or `.asc`)
 - Binary (`.gpg`) or text (`.asc`) output
+
+![The Notepad: a message being signed and encrypted for two recipients](docs/notepad.png)
 
 **Decrypt / Verify**
 - Picks the right secret key automatically
@@ -78,6 +88,7 @@ Sources/Kleo/
 scripts/
   build-app.sh             Builds build/Kleo.app
   make-icon.swift          Draws the app icon
+docs/                      Icon and screenshots for this README (demo keys only)
 ```
 
 ## License
