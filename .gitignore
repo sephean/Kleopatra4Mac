@@ -1,0 +1,14 @@
+.build/
+build/
+.swiftpm/
+*.xcodeproj/
+xcuserdata/
+.DS_Store
+
+# Never commit keys or messages
+*.asc
+*.gpg
+*.pgp
+*.sig
+*.key
+*.rev
